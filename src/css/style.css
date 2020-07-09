@@ -1,0 +1,280 @@
+:root {
+    font-size: 16px;
+    --height-roulette: 30vh;
+    --width-roulette: 50vw;
+    color: whitesmoke;
+}
+
+.h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5rem;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.5em;
+}
+
+.game {
+    text-align: center;
+}
+
+.err {
+    color: red;
+    text-transform: uppercase;
+}
+
+.res-win {
+    color: green;
+    font-weight: bold;
+}
+.res-standoff {
+    color: yellow;
+    font-weight: bold;
+}
+.res-lose {
+    color: red;
+    font-weight: bold;
+}
+
+.res-win, .res-standoff, .res-lose {
+    font-size: 2rem;
+}
+
+.result-block {
+    padding: 0.5em 0;
+    font-size: 2rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: stretch;
+}
+
+.rules {
+    flex-grow: 1;
+    text-align: center;
+    width: 10vw;
+}
+/* .rule:hover {
+    cursor: pointer;
+} */
+.rule {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.rules ol {
+    text-align: left;
+    font-size: 1.3rem;
+    padding: 0 2em;
+}
+.game {
+    flex-grow: 2;
+}
+
+.history {
+    flex-grow: 1;
+    text-align: right;
+    font-size: 2rem;
+    height: 50vh;
+    width: 10vw;
+    color: white;
+}
+
+.roulette {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #000;
+    height: 30vh;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 0, 0);
+    background-color: black;
+}
+
+.roulette-position {
+    position: absolute;
+    left: 50%;
+    top: 50%
+}
+#roulette-list {
+    list-style-type: none;
+    margin-right: 4px;
+    position: absolute;
+    left: -1955px; 
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#roulette-list li {
+    display: inline-block;
+    outline: 1px solid white;
+    height: calc(var(--height-roulette) - 3rem);
+    width: calc(var(--width-roulette) / 6);
+    margin-right: 10px;
+    font-size: 4rem;
+}
+
+#roulette-list li:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#roulette-list li:nth-child(odd) {
+    background-color: black;
+    color: red;
+}
+
+#roulette-list li:nth-child(even) {
+    background-color: red;
+    color: black;
+}
+
+.roulette-indicator {
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    width: 1px;
+    height: var(--height-roulette);
+    background-color: #fff;
+    z-index: 1;
+}
+
+.animation {
+    transform: translate(-90%);
+    transition-property: left;
+    transition-duration: 5s;
+    transition-timing-function: ease-out;
+}
+
+.form {
+    display: inline-block;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.label {
+    vertical-align: top;
+    text-align: right;
+}
+
+.form input, label {
+    font-size: 2rem;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.form input {
+    padding-left: 0.3em;
+}
+
+.form button {
+    font-size: 3rem;
+    height: 1.5em;
+    width: 6em;
+    border-radius: 2em;
+    border: none;
+    transition: all linear 0.5s;
+}
+
+.form button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: red;
+    box-shadow: 3px 3px 20px 0 #2b2b2b;
+}
+
+.balance {
+    font-size: 4.5rem;
+}
+
+.history-list {
+    font-size: 1rem;
+    overflow-y: scroll;
+    height: 100%;
+    padding-right: 0.5em;
+    font-size: 1.5rem;
+    border-spacing: 1.5em 0.3em;
+}
+
+.history-list th {
+    vertical-align: top;
+}
+
+.win {
+    color: green;
+}
+
+.lose {
+    color: red;
+}
+
+.standoff {
+    color: yellow;
+}
+
+.win, .lose, .standoff {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.history-table {
+    display: inline-block;
+    text-align: center;
+}
+
+.main{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(150,0,158,1) 0%, rgba(0,0,0,1) 60%); */
+    background-image: url(../img/back3.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+body {
+    padding:0;
+    margin: 0;
+}
+
+.balance table {
+    text-align: right;
+}
+
+.end-win {
+    display: none;
+}
+
+.block {
+    position: fixed;
+    left: 35vw;
+    top: 15vh;
+    background-color: black;
+    z-index: 3;
+    text-align: center;
+}
+
+.dark-back {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.end-block {
+    left: 30vw;
+}
+
+.end-lose {
+    display: none;
+}

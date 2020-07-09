@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Casino</title>
+</head>
+<body>
+    <div class="main">
+        <h1 class="h1">Casino</h1>
+        <div class="flex">
+            <div class="rules">
+                <span class="rule">Правила</span>
+                <ol>
+                    <li>Игра начинается с 10000$</li>
+                    <li>Игрок загадывает число от 1 до 100 и делает ставку от 100 до 1000</li>
+                    <li>Если разница между числом игрока и случайным числом меньше либо равна 10,
+                        то игрок получает сумму, равную удвоенной ставке. Если разница больше 10, 
+                       но меньше либо равна 20, то игрок получает сумму, равную ставке. 
+                       Во всех остальных случаях игрок проигрывает сумму, равную ставке.</li>
+                    <li>Игра продолжается до тех пор, пока у игрока или казино не закончатся деньги.</li>
+                </ul>
+            </div>
+            
+            <div class="game">
+                
+                <div class="result-block"><span id="result">Ваш результат</span></div>
+
+                <div class="roulette">
+                    <div id="roulette-indicator-id" class="roulette-indicator"></div>
+                    <div class="roulette-position"><ul id="roulette-list"></ul></div>
+                </div>
+                
+                <div class="form">
+                    <table>
+                        <tr>
+                            <td class="label"><label for="num">Введите ваше число: </label></td>
+                            <td><input id="num" type="text" placeholder="Число..."></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="bet">Введите вашу ставку: </label></td>
+                            <td><input id="bet" type="text" placeholder="Ставка..."></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button id="buttonSpin">Крутить</button></td>
+                        </tr>  
+                    </table>
+                </div>
+                
+                <div id="status"></div>
+            </div>
+            <div class="history">
+                <div class="history-table">
+                    <table class="history-list" id="history-list">
+                        <tr>
+                            <th>Результат</th>   
+                            <th>Число</th>
+                            <th>Рулетка</th>
+                        </tr>    
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="balance">
+            <table>
+                <tr>
+                    <td>Игрок: </td>
+                    <td><span id="balance-gamer">10000</span>$</td>
+                </tr>
+                <tr>
+                    <td>Казино: </td>
+                    <td><span id="balance-casino">20000</span>$</td>
+                </tr>
+            </table>
+        </div>
+        <div class="end-win" id="end-win">
+            <div class="dark-back">
+                <div class="block">
+                    <h1>Вы выйграли!</h1>
+                    <img src="src/img/win.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="end-lose" id="end-lose">
+            <div class="dark-back">
+                <div class="block end-block">
+                    <h1>Вы проиграли</h1>
+                    <img src="src/img/lose.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/js/script.js"></script>
+</body>
+</html>
